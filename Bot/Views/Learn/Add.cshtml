@@ -1,0 +1,25 @@
+﻿@model Bot.ViewModels.AddingCar
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+@using (Html.BeginForm("Create", "Learn"))
+{
+    @Html.LabelFor(m => m.Car.Name)
+    @Html.TextBoxFor(m => m.Car.Name)
+    <br />
+    @Html.LabelFor(m => m.Car.Color)
+    @Html.TextBoxFor(m => m.Car.Color)
+    <br />
+
+    @Html.LabelFor(m => m.Car.cartype)
+    @Html.DropDownListFor(m=>m.Car.CarTypeId,new SelectList(Model.CarTypes,"Id","Name"),"Select Type")
+    <br />
+
+
+
+    @Html.AntiForgeryToken()
+    <button type="submit">Submit</button>
+}

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Bot.Models.Car>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<button class="btn btn-primary" onclick="location.href='@Url.Action("Add","Learn")'"> Add Car</button>
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Color</td>
+            <td>Car Type</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.Name</td>
+            <td>@i.Color</td>
+            <td>@i.cartype.Name</td>
+        </tr>
+        }
+    </tbody>
+</table>
